@@ -93,6 +93,7 @@ def normalize_space(text):
 
 def clean_text(text):
     text = text.lower()
+    text = text.replace('\n', ' ')
     text = remove_mentions(text)
     text = remove_links(text)
     text = remove_non_letters(text)
