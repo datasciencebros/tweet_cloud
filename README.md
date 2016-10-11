@@ -5,8 +5,9 @@
 ## Installation
 
 1. Install `t` `gem install t`.
-2. `pip install -r requirements.txt`.
-3. Run tests `nosetests --rednose -v tests`.
+2. Follow the steps when runnning `t authorize`.
+3. `pip install -r requirements.txt`.
+4. Run tests `nosetests --rednose -v tests`.
 
 ## Usage
 1. `python tweet_cloud.py --username 'username'`
