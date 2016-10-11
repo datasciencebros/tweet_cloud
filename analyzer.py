@@ -23,7 +23,9 @@ class Analyzer:
                     # Exclude tweets.
                     if exclude_rt:
                         if not tweet.startswith('RT'):
-                            writer.writerow([clean_text(tweet)])
+                            cleaned_text = clean_text(tweet)
+                            if cleaned_text:
+                                writer.writerow([cleaned_text])
                     else:
                         writer.writerow([clean_text(tweet)])
 
