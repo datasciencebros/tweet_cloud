@@ -27,6 +27,8 @@ class TwitterFetcher:
             print('The {} username does not exists.').format(username)
         elif 'Failed to open TCP connection to' in stderr:
             print('There was a internet problem. Please check if you are online.')
+        elif 'Rate limit exceeded' in stderr:
+            print('The Rate limit was exceeded. Please try later.')
         else:
             print(stderr)
 
