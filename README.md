@@ -3,6 +3,7 @@
 ## Installation
 
 1. Install `t` `gem install t`.
+2. `pip install -r requirements.txt`
 
 ## Usage
 1. `python tweet_cloud.py --username 'username'`
