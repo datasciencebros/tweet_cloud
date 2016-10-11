@@ -97,8 +97,8 @@ def clean_text(text):
     text = remove_mentions(text)
     text = remove_links(text)
     text = remove_non_letters(text)
-    text = remove_stop_words(text, get_stop_words('stopwords/spanish.txt'))
-    text = remove_stop_words(text, get_stop_words('stopwords/custom_stopwords.txt'))
     text = normalize_space(text)
     text = normalize_letters(text)
+    text = remove_stop_words(text, get_stop_words('stopwords/spanish.txt'))
+    text = remove_stop_words(text, get_stop_words('stopwords/custom_stopwords.txt'))
     return text
