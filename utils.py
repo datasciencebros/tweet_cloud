@@ -4,23 +4,21 @@ from __future__ import unicode_literals
 import codecs
 import re
 
-def remove_mentions(text):
+
+def remove_entity(text, symbol):
     words = []
     for w in text.split():
-        if not w.startswith('@'):
+        if not w.startswith(symbol):
             words.append(w)
 
     words = ' '.join(words)
     return words
+
+def remove_mentions(text):
+    return remove_entity(text, '@')
 
 def remove_links(text):
-    words = []
-    for w in text.split():
-        if not w.startswith('http'):
-            words.append(w)
-
-    words = ' '.join(words)
-    return words
+    return remove_entity(text, 'http')
 
 def remove_stop_words(text, stop_words):
     words = []
