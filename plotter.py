@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import click
+import codecs
 
 from wordcloud import WordCloud
 
@@ -8,7 +9,7 @@ from wordcloud import WordCloud
 class Plotter:
     @staticmethod
     def plot(username):
-        text = open('output/' + username + '.csv').read()
+        text = codecs.open('output/' + username + '.csv', encoding='utf-8').read()
 
         wordcloud = WordCloud(
             font_path='fonts/RobotoCondensed-Regular.ttf',
