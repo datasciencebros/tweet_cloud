@@ -12,6 +12,9 @@
 ## Usage
 1. `python tweet_cloud.py --username 'username'`
 
+## Language Support
+1. Currently, we only support Spanish.
+
 
 ## Stopwords
 Spanish stopwords is based on `http://snowball.tartarus.org/algorithms/spanish/stop.txt`
