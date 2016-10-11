@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+from __future__ import print_function
+
 import subprocess
 
 import click
@@ -22,11 +24,11 @@ class TwitterFetcher:
     @staticmethod
     def _handle_error(stderr, username):
         if 'Sorry, that page does not exist' in stderr:
-            print 'The {} username does not exists.'.format(username)
+            print('The {} username does not exists.').format(username)
         elif 'Failed to open TCP connection to' in stderr:
-            print 'There was a internet problem. Please check if you are online.'
+            print('There was a internet problem. Please check if you are online.')
         else:
-            print stderr
+            print(stderr)
 
 @click.command()
 @click.argument('username', nargs=1)
