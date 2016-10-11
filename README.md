@@ -1,5 +1,7 @@
 # TweetCloud: Analyze the words of your twitter stars.
 
+[![Code Climate](https://codeclimate.com/github/datasciencebros/tweet_cloud/badges/gpa.svg)](https://codeclimate.com/github/datasciencebros/tweet_cloud)
+
 ## Installation
 
 1. Install `t` `gem install t`.
