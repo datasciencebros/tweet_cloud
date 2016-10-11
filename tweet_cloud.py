@@ -4,15 +4,15 @@ import click
 
 
 @click.command()
-@click.option('--username', help='The twitter username.')
+@click.argument('username', nargs=1)
 def main(username):
-    process = subprocess.Popen(['python', 'fetcher.py', '--username', username])
+    process = subprocess.Popen(['python', 'fetcher.py', username])
     process.communicate()
 
-    process = subprocess.Popen(['python', 'analyzer.py', '--username', username])
+    process = subprocess.Popen(['python', 'analyzer.py', username])
     process.communicate()
 
-    process = subprocess.Popen(['python', 'plotter.py', '--username', username])
+    process = subprocess.Popen(['python', 'plotter.py', username])
     process.communicate()
 
 

@@ -29,7 +29,7 @@ class TwitterFetcher:
             print stderr
 
 @click.command()
-@click.option('--username', help='The twitter username.')
+@click.argument('username', nargs=1)
 def retrieve_tweets(username):
     TwitterFetcher.fetch(username)
 

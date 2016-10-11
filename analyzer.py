@@ -26,7 +26,7 @@ class Analyzer:
 
 
 @click.command()
-@click.option('--username', help='The twitter username.')
+@click.argument('username', nargs=1)
 def analyzer(username):
     Analyzer.analyze(username)
 

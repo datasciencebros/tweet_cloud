@@ -21,7 +21,7 @@ class Plotter:
         wordcloud.to_file('output/wordcloud-' + username + '.png')
 
 @click.command()
-@click.option('--username', help='The twitter username.')
+@click.argument('username', nargs=1)
 def make_wordcloud(username):
     Plotter.plot(username)
 
