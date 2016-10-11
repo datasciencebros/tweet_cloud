@@ -11,7 +11,7 @@ class Plotter:
     @staticmethod
     def plot(username):
         text = codecs.open('output/' + username + '.csv', encoding='utf-8').read()
-        match_pattern = re.findall(r'\b\w{3,15}\b', text, re.UNICODE)
+        match_pattern = re.findall(r'\b\w{2,15}\b', text, re.UNICODE)
 
         frequency = {}
 
