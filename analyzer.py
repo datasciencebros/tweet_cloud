@@ -11,7 +11,7 @@ TWEET_INDEX = 3
 
 class Analyzer:
     @staticmethod
-    def analyze(username):
+    def analyze(username, exclude_rt):
         with io.open('data/' + username + '.csv', 'rt') as filename:
             reader = csv.reader(filename)
 
@@ -21,14 +21,18 @@ class Analyzer:
                 for row in reader:
                     tweet = row[TWEET_INDEX]
                     # Exclude tweets.
-                    if not tweet.startswith('RT'):
+                    if exclude_rt:
+                        if not tweet.startswith('RT'):
+                            writer.writerow([clean_text(tweet)])
+                    else:
                         writer.writerow([clean_text(tweet)])
 
 
 @click.command()
+@click.option('--exclude-rt', default=True)
 @click.argument('username', nargs=1)
-def analyzer(username):
-    Analyzer.analyze(username)
+def analyzer(username, exclude_rt):
+    Analyzer.analyze(username, exclude_rt)
 
 
 if __name__ == '__main__':
