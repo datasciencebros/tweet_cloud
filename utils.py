@@ -73,7 +73,7 @@ def get_stop_words(filename):
 
 def remove_non_letters(text):
     tokens = text.split()
-    regex = re.compile(r'[^a-zA-ZáéíóúÁÉÍÓÚüÜÔôÕõÇçÃãÂâàñÑ@]')
+    regex = re.compile(r'[^a-zA-ZáéíóúÁÉÍÓÚüÜÔôÕõÇçÃãÂâàñÑ@#]')
 
     new_text = []
 
