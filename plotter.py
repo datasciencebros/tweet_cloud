@@ -2,7 +2,6 @@
 
 import click
 import codecs
-import re
 
 from wordcloud import WordCloud
 
@@ -11,11 +10,11 @@ class Plotter:
     @staticmethod
     def plot(username):
         text = codecs.open('output/' + username + '.csv', encoding='utf-8').read()
-        match_pattern = re.findall(r'\b\w{2,15}\b', text, re.UNICODE)
+        words = text.split()
 
         frequency = {}
 
-        for word in match_pattern:
+        for word in words:
             count = frequency.get(word, 0)
             frequency[word] = count + 1
 

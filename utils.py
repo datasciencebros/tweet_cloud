@@ -73,7 +73,7 @@ def get_stop_words(filename):
 
 def remove_non_letters(text):
     tokens = text.split()
-    regex = re.compile(r'[^a-zA-ZáéíóúÁÉÍÓÚüÜÔôÕõÇçÃãÂâàñÑ@#]')
+    regex = re.compile(r'[^0-9a-zA-ZáéíóúÁÉÍÓÚüÜÔôÕõÇçÃãÂâàñÑ@#]')
 
     new_text = []
 
@@ -88,6 +88,15 @@ def remove_non_letters(text):
 def normalize_space(text):
     return re.sub(r' +', ' ', text)
 
+def remove_words_based_on_length(text, min_length=2, max_length=29):
+    tokens = text.split()
+    new_text = []
+
+    for token in tokens:
+        if min_length <= len(token) <= max_length:
+            new_text.append(token)
+
+    return ' '.join(new_text)
 
 def clean_text(text):
     text = text.lower()
@@ -99,4 +108,5 @@ def clean_text(text):
     text = normalize_letters(text)
     text = remove_stop_words(text, get_stop_words('stopwords/spanish.txt'))
     text = remove_stop_words(text, get_stop_words('stopwords/custom_stopwords.txt'))
+    text = remove_words_based_on_length(text, 2, 15)
     return text

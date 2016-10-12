@@ -15,3 +15,4 @@ sr
 sra
 aun
 tal
+tan
