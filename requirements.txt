@@ -11,5 +11,6 @@ python-dateutil==2.5.3
 python-termstyle==0.1.10
 pytz==2016.7
 rednose==1.2.1
+scipy==0.18.1
 six==1.10.0
 wordcloud==1.2.1

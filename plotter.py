@@ -2,6 +2,9 @@
 
 import click
 import codecs
+from os import path
+from PIL import Image
+import numpy as np
 
 from wordcloud import WordCloud
 
@@ -9,6 +12,9 @@ from wordcloud import WordCloud
 class Plotter:
     @staticmethod
     def plot(username):
+        d = path.dirname(__file__)
+        twitter_mask = np.array(Image.open(path.join(d, 'masks/twitter.png')))
+
         text = codecs.open('output/' + username + '.csv', encoding='utf-8').read()
         words = text.split()
 
@@ -24,6 +30,7 @@ class Plotter:
             width=1800,
             height=1400,
             margin=10,
+            mask=twitter_mask,
         ).generate_from_frequencies(frequency.items())
 
         wordcloud.to_file('output/wordcloud-' + username + '.png')
